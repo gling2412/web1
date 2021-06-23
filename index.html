@@ -5,56 +5,161 @@
         <title>gling</title>
         <link rel="stylesheet" href="./css.css">
         <link rel="shortcut icon" href="./gling.png">
+        <script>
+            function nightNday(self) {
+            var target = document.querySelector('body')
+            if(self.value === 'night') {
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day';
+            
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i<links.length) {
+                    links[i].style.color = 'powderblue';
+                    i = i+1;
+                }
+            }
+            else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night';
+
+                var links = document.querySelectorAll('a');
+                var i;
+                for(i=0; i < links.length; i++)  {
+                    links[i].style.color = '-webkit-Link';
+                }
+            }
+        }
+        </script>
+        
     
          
     </head>
     <body>
-        <h1>박지우의 홈페이지</h1>
+        <h1 style="text-align: center;">박지우의 홈페이지</h1>
         <div id="website">
-            <h2><u>웹사이트 바로가기</u></h2>
+            <h2>웹사이트 바로가기</h2>
             <ul>
                 <a href="https://www.naver.com" target="_blank">
-                    <li class="gling_item">                    
-                        <span class="blind">naver</span>
-                        <img src="../web1/naver.ico">
-                                        
+                    <li class="gling_item">                                        
+                        <img src="./naver.ico">
+                        <span class="blind">naver</span>                                        
                     </li>
+                    <span>naver</span>
                 </a>
                 <a href="https://www.google.com" target="_blank">
                     <li class="gling_item">                    
                         <span class="blind">google</span>
-                        <img src="../web1/google.ico">                                       
+                        <img src="./google.ico">                                       
                     </li>
+                    <span>google</span>
                 </a>                 
                 <a href="https://www.youtube.com" target="_blank">
                     <li class="gling_item">    
                         <span class="blind">youtube</span>
-                        <img src="../web1/youtube.ico" >                                        
+                        <img src="./youtube.ico" >                                        
                     </li>
+                    <span>youtube</span>
                 </a>                
                 <a href="https://khcanvas.khu.ac.kr/" target="_blank">
                     <li class="gling_item">
                         <span class="blind">경희대e-campus</span>
-                        <img src="../web1/khu-ecampus.ico" >                   
+                        <img src="./khu-ecampus.ico" >                   
                     </li>
+                    <span>e-campus</span>
                 </a>
-                <a href="https://playground.plutus.iohkdev.io/" target="_blank">
+                <a href="https://www.coursera.org/learn/machine-learning" target="_blank">
                     <li class="gling_item">
-                        <span class="blind">Plutus Playground</span>
-                        <img src="../web1/plutus.ico" >                   
+                        <span class="blind">Coursera</span>
+                        <img src="./coursera.png" >                   
                     </li>
+                    <span>coursera</span>
                 </a>
                 <a href="https://github.com" target="_blank">
                     <li class="gling_item">
                         <span class="blind">Github</span>
-                        <img src="../web1/github.png" >                   
+                        <img src="./github.png" >                   
                     </li>
+                    <span>github</span>
                 </a>
                 
             </ul>
         </div>
         
+        <div>
+            <input id="night2day" type="button" value="night" onclick="
+            nightNday(this);
+            ">
+        </div>
 
+
+
+        <div id="input">
+            <input type="button" value="black" onclick="
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#website').style.backgroundColor = 'white';
+            ">
+            <input type="button" value="white" onclick="
+            document.querySelector('body').style.backgroundColor = 'white';">
+            <input type="button" value="blue" onclick="
+            document.querySelector('body').style.backgroundColor = 'blue';">
+            <input type="button" value="green" onclick="
+            document.querySelector('body').style.backgroundColor = 'green';">
+            <input type="button" value="purple" onclick="
+            document.querySelector('body').style.backgroundColor = 'purple';">
+        </div>
+
+        <div id="sitelinks">
+            <input type="button" value="black" onclick="
+            document.querySelector('.gling_item').style.backgroundColor = 'black';
+            document.querySelector('.gling_item').style.color = 'white';
+            document.querySelector('#website').style.backgroundColor = 'white';
+            ">
+            <input type="button" value="white" onclick="
+            var site_image = document.querySelectorAll('.gling_item');
+            var i = 0;
+            while(i < site_image.length){
+                site_image[i].style.backgroundColor = 'white';
+                i = i + 1;
+            }">
+            <input type="button" value="blue" onclick="
+            var site_image = document.querySelectorAll('.gling_item');
+            var i = 0;
+            while(i < site_image.length){
+                site_image[i].style.backgroundColor = 'blue';
+                i = i + 1;
+            }">
+            <input type="button" value="green" onclick="
+            var site_image = document.querySelectorAll('.gling_item');
+            var i = 0;
+            while(i < site_image.length){
+                site_image[i].style.backgroundColor = 'green';
+                i = i + 1;
+            }">
+            <input type="button" value="purple" onclick="
+            var site_image = document.querySelectorAll('.gling_item');
+            var i = 0;
+            while(i < site_image.length){
+                site_image[i].style.backgroundColor = 'purple';
+                i = i + 1;
+            }
+            ">
+        </div>
+
+
+        <script>
+            function sum(x,y) {
+                var sum = x + y;
+                return(sum);
+            }
+            
+        </script>  
+        
+        
+        
         <div class="blind">
         <table>
             <tr>
